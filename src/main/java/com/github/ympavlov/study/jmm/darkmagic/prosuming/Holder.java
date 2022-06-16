@@ -26,6 +26,9 @@ package com.github.ympavlov.study.jmm.darkmagic.prosuming;
 
 import org.openjdk.jcstress.annotations.State;
 
+/*
+ * Testable holder object. Implementations consist of an issue to test
+ */
 @State
 public interface Holder
 {
@@ -46,5 +49,14 @@ public interface Holder
 		public int get() {
 			return x4 + x3 + x2 + x1;
 		}
+		/*	x1 = v;
+			x2 = 2*v;
+			x3 = 3*x2;
+			x4 = x2 * x3;
+		}
+		public int get() {
+			return (x4 * x2 + x3 * 3) * x1;
+			//return x1;
+		}*/
 	}
 }
